@@ -1,0 +1,28 @@
+﻿<Window x:Class="PracticaPerimetro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticaPerimetro"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        
+        <TextBlock>Perimetros</TextBlock>
+        <ComboBox Name="cbTipoFigura" SelectionChanged="cbTipoFigura_SelectionChanged">
+            <ComboBoxItem>Circulo</ComboBoxItem>
+            <ComboBoxItem>Cuadrado</ComboBoxItem>
+        </ComboBox>
+        
+        <local:ControlPerimetroCirculo  x:Name="controlPerimetroCirculo" Visibility="Collapsed"></local:ControlPerimetroCirculo>
+        <local:ControlPerimetroCuadrado x:Name="controlPerimetroCuadrado"  Visibility="Collapsed"></local:ControlPerimetroCuadrado>
+
+        <Button Name="btnCalcular" Click="btnCalcular_Click">Calcular</Button>
+        
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>Resultado</TextBlock>
+            <TextBlock Name="lblResultado">0.00</TextBlock>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>
